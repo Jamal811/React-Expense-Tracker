@@ -13,9 +13,8 @@ dist-ssr
 *.local
 
 # Editor directories and files
-package-lock.json
-package.json
-vite.config.js
+node_modules
+.gitignore
 
 
 .vscode/*

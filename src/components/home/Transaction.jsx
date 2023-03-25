@@ -1,5 +1,5 @@
+import React from "react";
 import styled from "styled-components";
-import Home from "./components/home/Home";
 
 const Container = styled.div`
   display: flex;
@@ -9,18 +9,12 @@ const Container = styled.div`
   font-family: "Montserrat", sans-serif;
 `;
 
-const Header = styled.span`
-  color: black;
-  font-size: 25px;
-  font-weight: bold;
-`;
-function App() {
+const Transaction = () => {
   return (
     <Container>
-      <Header>Expense Tracker</Header>
-      <Home />
+      <h3>It is Transaction</h3>
     </Container>
   );
-}
+};
 
-export default App;
+export default Transaction;
