@@ -60,6 +60,10 @@ const AddTransactionView = () => {
   const [amount, setAmount] = useState();
   const [desc, setDesc] = useState();
   const [type, setType] = useState("EXPENSE");
+  const addTransaction = (props) => {
+    console.log({ amount, desc, type });
+    props.toggleAddTxn();
+  };
 
   return (
     <AddTransactionContainer>
@@ -93,7 +97,7 @@ const AddTransactionView = () => {
         />
         <label htmlFor="income">Income</label>
       </RadioBox>
-      <AddTransaction>Add Transaction</AddTransaction>
+      <AddTransaction onClick={addTransaction}>Add Transaction</AddTransaction>
     </AddTransactionContainer>
   );
 };
@@ -107,7 +111,7 @@ const OverView = (props) => {
           {isAddTxnVisible ? "Cancel" : "ADD"}
         </AddTransaction>
       </BalanceBox>
-      {isAddTxnVisible && <AddTransactionView />}
+      {isAddTxnVisible && <AddTransactionView toggleAddTxn={toggleAddTxn} />}
     </Container>
   );
 };

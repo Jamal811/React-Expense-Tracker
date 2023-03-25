@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Overview from "./Overview";
 import Transaction from "./transaction";
@@ -13,11 +13,16 @@ const Container = styled.div`
 `;
 
 const Home = () => {
+  const [transacrions, updateTransacrion] = useState([]);
+  const addTransaction = (payload) => {
+    const transactionArray = [...transacrions];
+    transactionArray.push(payload);
+    updateTransacrion(transactionArray);
+  };
   return (
     <Container>
-      <h3>It is Home</h3>
-      <Overview />
-      <Transaction />
+      <Overview addTransaction={addTransaction} />
+      <Transaction transacrions={transacrions} />
     </Container>
   );
 };
